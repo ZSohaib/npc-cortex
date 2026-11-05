@@ -1,0 +1,66 @@
+# game-description.toml -- Emberfall (medieval). Copy and adapt.
+[game]
+title = "Emberfall"
+setting = "medieval"
+languages = ["common", "elvish"]
+default_horizon = 12.0
+default_implication = 0.5
+
+[time]
+current = "Year 412 of the Ashen Crown, harvest season"
+
+[generation]
+seed = 7
+cost_tier = "low"
+
+[locations.market]
+coords = [0, 0]
+description = "Muddy market square ringed by timber stalls; the tithe cart parks by the well."
+
+[locations.chapel]
+coords = [14, 3]
+description = "Stone chapel on the hill; its bell marks curfew and its crypt holds the old lords."
+
+[locations.gate]
+coords = [-20, 6]
+description = "The town's only gate, flanked by two bored guards and a toll booth."
+
+[places.tithe_barn]
+coords = [2, 1]
+kind = "building"
+description = "Stone tithe barn where the collectors weigh the grain."
+owner = "collector_cask"
+public = false
+interior = "Counting room with a false floor under the desk."
+hidden = [{ text = "The false floor hides skimmed coin.", min_familiarity = 70 }]
+
+[places.market_well]
+coords = [0, 2]
+kind = "landmark"
+description = "The market well; everyone draws water here and gossips."
+public = true
+
+# Type defaults: fixed values apply to every merchant; `open` fields are
+# generated per instance (template offline, or LLM when a provider is set).
+[npc_types.merchant]
+description = "Traveling traders who work the market stalls and owe the tithe collectors money."
+profile = "P11"
+intellect = 3
+languages = ["common"]
+localization = 1
+body = { state = "healthy" }
+open = ["name", "age", "gender", "wealth", "social_rank", "power", "health",
+        "story", "skills", "short_memory", "long_memory", "localization_range"]
+actions = ["haggle", "wave"]
+
+[npc_types.guard]
+description = "Town guards who hold the gate because the captain ordered it and they fear her."
+profile = "P05"
+intellect = 2
+languages = ["common"]
+localization = 0
+localization_range = 8.0
+body = { state = "healthy" }
+open = ["name", "age", "gender", "wealth", "social_rank", "power", "health",
+        "story", "skills", "short_memory", "long_memory"]
+actions = ["challenge", "wave"]

@@ -1,0 +1,29 @@
+# game-quest-1.toml -- Emberfall. One defined NPC (Mira) + one generic (Brom).
+[quest]
+id = "q1"
+title = "The Harvest Tithe"
+scenario = "The Ashen Crown demands double tithe because the northern war drains the treasury. Mira Fairwind wants to hide her coin without angering the collectors, while the gate guards fear the captain's inspections and shake down every cart that passes the gate at dusk."
+time = "Harvest eve, dusk"
+latency_budget_ms = 1200
+dialogue_intensity = "high"
+
+[[npc]]
+id = "mira"
+type = "merchant"
+mode = "defined"
+location = "market"
+localization = 2
+name = "Mira Fairwind"
+gender = "female"
+age = 34
+wealth = 70
+story = "Mira inherited her mother's stall and her father's debts. She smiles at the tithe collectors because she fears the stocks, but every third coin slides into a hollow heel."
+skills = [{ name = "Haggling", description = "Never accepts the first price." }]
+short_memory = [{ text = "A collector counted her stall twice today.", tags = ["tithe"] }]
+long_memory = [{ fact = "Owes the collectors forty crowns.", tags = ["debt"] }]
+
+[[npc]]
+id = "brom"
+type = "guard"
+mode = "generic"
+location = "gate"

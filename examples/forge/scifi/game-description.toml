@@ -1,0 +1,60 @@
+# game-description.toml -- Waystation Kestrel (sci-fi). Copy and adapt.
+[game]
+title = "Waystation Kestrel"
+setting = "scifi"
+languages = ["galactic", "binary"]
+default_horizon = 30.0
+default_implication = 0.5
+
+[time]
+current = "Cycle 881, third shift"
+
+[generation]
+seed = 42
+cost_tier = "medium"
+
+[locations.dock]
+coords = [0, 0, 0]
+description = "Zero-g docking arm where freighters lock on; mag-boots required beyond the yellow line."
+
+[locations.core]
+coords = [10, 2, -4]
+description = "The reactor core deck, humming and off-limits to anyone without a radiation badge."
+
+[places.customs_lockers]
+coords = [1, 0, 1]
+kind = "building"
+description = "Customs locker row on the dock arm."
+owner = "station_security"
+public = false
+interior = "Scanning bay with a blind corner behind locker 9."
+hidden = [{ text = "Locker 9's blind corner defeats the scan.", min_familiarity = 75 }]
+
+[places.observation_dome]
+coords = [0, 5, 2]
+kind = "landmark"
+description = "Glass observation dome facing the shipyard."
+public = true
+
+[npc_types.engineer]
+description = "Station engineers who keep the reactor alive because the company pays hazard rates."
+profile = "P12"
+intellect = 4
+languages = ["galactic"]
+localization = 1
+body = { state = "healthy" }
+open = ["name", "age", "gender", "wealth", "social_rank", "power", "health",
+        "story", "skills", "short_memory", "long_memory", "localization_range"]
+actions = ["repair", "scan"]
+
+[npc_types.smuggler]
+description = "Dock smugglers who move unlisted cargo and fear station security scans."
+profile = "P14"
+intellect = 3
+languages = ["galactic", "binary"]
+localization = 0
+localization_range = 25.0
+body = { state = "healthy" }
+open = ["name", "age", "gender", "wealth", "social_rank", "power", "health",
+        "story", "skills", "short_memory", "long_memory"]
+actions = ["bribe", "hide"]

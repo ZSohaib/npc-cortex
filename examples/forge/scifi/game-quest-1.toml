@@ -1,0 +1,22 @@
+# game-quest-1.toml -- Waystation Kestrel. Generic cast, 3D docks.
+[quest]
+id = "q1"
+title = "Cold Start"
+scenario = "The reactor needs a cold start because the coolant loop cracked during docking. Chief Vex wants the core online before the company freighter arrives, while a smuggler fears the security sweep that always follows an alert and plans to move cargo during the blackout."
+time = "Third shift, alert amber"
+latency_budget_ms = 900
+dialogue_intensity = "medium"
+
+[[npc]]
+id = "vex"
+type = "engineer"
+mode = "defined"
+location = "core"
+name = "Vex Halcyon"
+power = 80
+
+[[npc]]
+id = "nyx"
+type = "smuggler"
+mode = "generic"
+location = "dock"

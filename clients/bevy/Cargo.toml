@@ -1,0 +1,15 @@
+[package]
+name = "npc-cortex-bevy"
+version = "0.1.0"
+edition = "2021"
+description = "Bevy plugin for the npc-cortex HTTP bridge: speech and observations as ECS messages"
+license = "MIT"
+
+[dependencies]
+npc-cortex = { path = "../rust" }
+bevy_ecs = "0.20"
+bevy_app = "0.20"
+serde_json = "1"
+
+[dev-dependencies]
+# none: tests run headless through bevy_app, no renderer needed

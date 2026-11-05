@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maison Cinq — 5-Star Restaurant</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <img class="title-art" src="/static/assets/title.png" alt="" width="72" height="45">
+    <h1>Maison Cinq</h1>
+    <span class="stars" aria-label="five stars">★★★★★</span>
+  </div>
+  <div class="controls">
+    <label>Mode
+      <select id="mode">
+        <option value="active">Active — play</option>
+        <option value="passive">Passive — watch</option>
+      </select>
+    </label>
+    <label>Role
+      <select id="role">
+        <option value="customer">Customer</option>
+        <option value="waiter">Waiter</option>
+        <option value="chef">Chef</option>
+        <option value="manager">Manager</option>
+      </select>
+    </label>
+    <label>Language
+      <select id="lang">
+        <option value="english">English</option>
+        <option value="french">Français</option>
+        <option value="spanish">Español</option>
+        <option value="arabic">العربية</option>
+      </select>
+    </label>
+    <span id="key" class="key" title="LLM key status">…</span>
+  </div>
+</header>
+<main class="layout">
+  <section class="floor-wrap">
+    <p class="goal"><strong>Tonight's goal:</strong> seat the rush, feed every table, keep 5 stars.
+    A critic dines anonymously — slow tables and walkouts cost rating.</p>
+    <canvas id="floor" width="800" height="480"></canvas>
+    <p class="hint">Click a person on the floor to open a chat with them. Staff act on their own; your role grants extra actions.</p>
+    <div id="toast" class="toast" hidden></div>
+  </section>
+  <aside class="side">
+    <section class="panel" id="stats">
+      <h2> Tonight</h2>
+      <dl>
+        <div><dt>Revenue</dt><dd id="st-revenue">€0</dd></div>
+        <div><dt>Rating</dt><dd id="st-rating">5.0</dd></div>
+        <div><dt>Served</dt><dd id="st-served">0</dd></div>
+        <div><dt>Waiting</dt><dd id="st-waiting">0</dd></div>
+      </dl>
+    </section>
+    <section class="panel" id="person">
+      <h2>Person</h2>
+      <p id="person-none">Nobody selected.</p>
+      <div id="person-card" hidden>
+        <p class="who"><strong id="p-name"></strong> <span id="p-role"></span></p>
+        <p class="langs" id="p-langs"></p>
+        <p class="langs" id="p-group"></p>
+        <div id="actions" class="actions"></div>
+      </div>
+    </section>
+    <section class="panel" id="chat">
+      <h2>Chat</h2>
+      <div id="threads" class="threads"></div>
+      <ul id="chat-log"><li class="dim">Click a person on the floor to talk.</li></ul>
+      <div class="talkrow">
+        <input id="talk" type="text" maxlength="200" placeholder="Say something…">
+        <button id="say">Send</button>
+      </div>
+    </section>
+    <section class="panel" id="orders">
+      <h2>Orders</h2>
+      <ul id="order-list"><li class="dim">None yet.</li></ul>
+    </section>
+    <section class="panel" id="nearby-panel">
+      <h2>Nearby</h2>
+      <div id="nearby"><p class="dim">Walk to the bar, the pass, the host stand, or a table.</p></div>
+    </section>
+    <section class="panel" id="logpanel">
+      <h2>Transcript</h2>
+      <ul id="log"></ul>
+    </section>
+  </aside>
+</main>
+<script src="/static/game.js"></script>
+</body>
+</html>

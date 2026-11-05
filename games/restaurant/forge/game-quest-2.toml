@@ -1,0 +1,102 @@
+# game-quest-2.toml -- Maison Cinq last seating. Same crew, thinner crowd,
+# one incognito critic. Playable contract for the forge (the running game
+# plays quest 1; this scenario generates with the same clarity gate).
+[quest]
+id = "critic"
+title = "The Critic's Last Seating"
+scenario = "At 10:30pm the rush thins because the last seating always does, but Celeste cannot relax: the anonymous VIP in the reservation book never showed, which means the critic is already inside, possibly Vivienne at the corner table. The crew wants a flawless close while fatigue pulls the other way, and every remaining guest feels the room holding its breath."
+time = "Friday, 10:30pm last seating"
+latency_budget_ms = 1200
+dialogue_intensity = "high"
+
+[[npc]]
+id = "celeste"
+type = "manager"
+mode = "defined"
+location = "dining_hall"
+name = "Celeste Marchand"
+gender = "female"
+age = 41
+story = "Celeste ran bistros in Lyon for a decade before the owner poached her to save Maison Cinq, because she once turned a one-star review into a signed apology. Tonight she watches every table for the critic she cannot name."
+
+[[npc]]
+id = "theo"
+type = "host"
+mode = "defined"
+location = "entrance"
+name = "Theo Alvarez"
+gender = "male"
+age = 27
+story = "Theo studied theater and treats the waitlist as an audience, because a bored line becomes a hostile one. With the line gone, he studies the late arrivals for whoever does not belong."
+
+[[npc]]
+id = "nina"
+type = "waiter"
+mode = "defined"
+location = "dining_hall"
+name = "Nina Petrova"
+gender = "female"
+age = 33
+story = "Nina waited tables in Moscow and Marseille before landing here, because fine dining pays for her daughter's violin. She has served three suspected critics tonight and trusts none of her guesses."
+
+[[npc]]
+id = "auguste"
+type = "chef"
+mode = "defined"
+location = "kitchen"
+name = "Auguste Blanc"
+gender = "male"
+age = 55
+power = 90
+story = "Auguste earned his first star at thirty and guards this kitchen like a ship, because the pass is the only place that ever made sense. He plates the late dishes himself, in case one of them is judged."
+
+[[npc]]
+id = "priya"
+type = "sommelier"
+mode = "defined"
+location = "bar"
+name = "Priya Nair"
+gender = "female"
+age = 38
+story = "Priya left a Bordeaux negociant to pour where it matters, because a bottle only sings at the table. She compares every late order against the ledger's critic notes."
+
+[[npc]]
+id = "vivienne"
+type = "customer"
+mode = "defined"
+location = "entrance"
+name = "Vivienne Sorel"
+gender = "female"
+age = 47
+profile = "P07"
+intellect = 5
+languages = ["french", "english"]
+wealth = 85
+power = 75
+story = "Vivienne reviews restaurants under false names because praise means nothing unless it is earned blind. She ordered the risotto, watches the waiters' hands, and has already decided the first paragraph."
+skills = [{ name = "Blind tasting", description = "Deconstructs any plate in three bites without notes." },
+          { name = "Incognito", description = "Thirty years of dining unrecognized; the corner table is tradecraft." }]
+
+[[npc]]
+id = "g1"
+type = "customer"
+mode = "generic"
+location = "entrance"
+
+[[npc]]
+id = "g2"
+type = "customer"
+mode = "generic"
+location = "entrance"
+
+[[npc]]
+id = "g3"
+type = "customer"
+mode = "generic"
+location = "entrance"
+
+[[npc]]
+id = "g4"
+type = "customer"
+mode = "generic"
+location = "entrance"
