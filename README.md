@@ -1,4 +1,5 @@
 <img width="1254" height="1254" alt="Recolored npc-cortex neural logo" src="https://github.com/user-attachments/assets/7395f58a-0b8b-40c6-ba31-2ea354c6ff44" />
+
 # NPC Cortex
 
 LLM-driven NPCs for any game engine — without stalling the frame loop.
