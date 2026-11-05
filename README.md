@@ -271,11 +271,3 @@ check.
 docker build -t npc-cortex-smoke .
 docker run --rm npc-cortex-smoke   # ends with SMOKE-GREEN
 ```
-
-## Compatibility
-
-The runtime API and semantics are unchanged from the original
-`npc-bridge` contract: the package import is the only breaking change
-(`npc_bridge` → `npc_cortex`), alongside the new canonical env var
-`NPC_CORTEX_API_KEY` (legacy `NPC_LLM_API_KEY` still works).
-Positions additionally accept 3D; 2D behavior is identical.
