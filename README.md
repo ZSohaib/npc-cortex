@@ -12,10 +12,6 @@ your frame loop (or a network poll) invokes. Perception, implication
 gating, engagements, environment awareness, mutual NPC knowledge, and
 a full audit trail come built in.
 
-> Renamed from `npc-bridge` to `npc-cortex`. The old
-> `NPC_LLM_API_KEY` variable is still honoured as a fallback; new
-> setups should use `NPC_CORTEX_API_KEY`.
-
 ## What this repo is
 
 Three layers, each usable alone:
